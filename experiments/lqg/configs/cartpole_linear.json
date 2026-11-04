@@ -1,0 +1,111 @@
+{
+  "name": "cartpole_linear",
+  "system": "cartpole_linear",
+  "description": "Unquantized linear-Gaussian cart-pole reference matching cartpole_observer physics and noise scales. Guarantees do not cover the nonlinear or quantized plants.",
+  "physics": {
+    "M": 1.0,
+    "m": 0.1,
+    "l": 0.5,
+    "g": 9.81,
+    "dt": 0.05
+  },
+  "lqr": {
+    "Q": [
+      1.0,
+      0.1,
+      10.0,
+      0.1
+    ],
+    "R": 0.1
+  },
+  "cost": {
+    "Q": [
+      1.0,
+      0.1,
+      10.0,
+      0.1
+    ],
+    "R": 0.1
+  },
+  "noise": {
+    "process_std": [
+      0.001,
+      0.02,
+      0.001,
+      0.03
+    ],
+    "measurement_std": [
+      0.01,
+      0.05,
+      0.005,
+      0.05
+    ],
+    "rule": "gh3"
+  },
+  "init": {
+    "s": [
+      0.0,
+      0.0,
+      0.05,
+      0.0
+    ],
+    "z": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "horizons": [
+    25,
+    50,
+    100
+  ],
+  "simulation": {
+    "n_traj": 20000,
+    "seed": 20261026,
+    "n_draw": 800
+  },
+  "delta": 0.025,
+  "measurement_noise_multipliers": [
+    0.25,
+    1.0,
+    4.0
+  ],
+  "grid": {
+    "state_points": [
+      13,
+      7,
+      5,
+      5
+    ],
+    "state_range": [
+      0.4,
+      0.6,
+      0.1,
+      0.4
+    ],
+    "memory_points": [
+      13,
+      7,
+      5,
+      5
+    ],
+    "memory_range": [
+      0.4,
+      0.6,
+      0.1,
+      0.4
+    ],
+    "action_points": 7,
+    "action_limit": 2.4
+  },
+  "lambda_grid": {
+    "min": 0.01,
+    "max": 100.0,
+    "points_per_decade": 8,
+    "max_expansions": 2
+  },
+  "poly_degree": 16,
+  "max_states": 50000
+}

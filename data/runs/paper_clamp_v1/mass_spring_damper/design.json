@@ -1,0 +1,37 @@
+{
+  "name": "mass_spring_damper",
+  "n": 2,
+  "m": 1,
+  "dt": 0.05,
+  "spectral_radius_A": 0.990049833749168,
+  "spectral_radius_A_minus_BK": 0.8855527746817174,
+  "spectral_radius_A(I-LH)": 0.7179953055980669,
+  "spectral_radius_joint": 0.8855527746817177,
+  "lqr_riccati_residual": 1.4210854715202004e-14,
+  "kalman_gain_residual": 2.168404344971009e-19,
+  "kalman_pred_residual": 4.2012834183813297e-19,
+  "K": [
+    [
+      5.6335507052557,
+      4.106321404378096
+    ]
+  ],
+  "L": [
+    [
+      0.2423878181876068,
+      0.013339831352972297
+    ],
+    [
+      0.33349578382430756,
+      0.2999318272033119
+    ]
+  ],
+  "notes": [
+    "Mass-spring-damper: m xdd + b xd + k x = u.",
+    "m=1.0 kg, b=0.4 N s/m, k=4.0 N/m.",
+    "discrete process_std from config",
+    "K and L redesigned for this configuration",
+    "Accumulated cost is sum_t (S_t' Qc S_t + U_t' Rc U_t) with no factor of dt."
+  ],
+  "disclaimer": "Spectral radii and Riccati residuals are for the continuous-state linear Gaussian model with the fixed steady-state gains. They do not apply to nonlinear plants or quantized controllers."
+}

@@ -1,0 +1,55 @@
+{
+  "name": "cartpole_linear",
+  "n": 4,
+  "m": 1,
+  "dt": 0.05,
+  "spectral_radius_A": 1.2614756115422345,
+  "spectral_radius_A_minus_BK": 0.9465414895004965,
+  "spectral_radius_A(I-LH)": 0.7337222867919151,
+  "spectral_radius_joint": 0.9465414895004964,
+  "lqr_riccati_residual": 3.524291969370097e-12,
+  "kalman_gain_residual": 2.168404344971009e-19,
+  "kalman_pred_residual": 3.903127820947816e-18,
+  "K": [
+    [
+      -2.311928793193416,
+      -3.2985759325905555,
+      -32.741342514882014,
+      -7.035497127510626
+    ]
+  ],
+  "L": [
+    [
+      0.20912518271759778,
+      0.018019588767623915,
+      -0.0005098344428167028,
+      6.3565896811309695e-06
+    ],
+    [
+      0.45048971919059816,
+      0.309015505175299,
+      -0.017786318903950247,
+      -0.0003394249314778154
+    ],
+    [
+      -0.00012745861070417579,
+      -0.00017786318903950231,
+      0.37245226089632644,
+      0.01431736228812171
+    ],
+    [
+      0.00015891474202827402,
+      -0.0003394249314778151,
+      1.4317362288121716,
+      0.4253852863515186
+    ]
+  ],
+  "notes": [
+    "Linearized cart-pole about upright; guarantees do not cover the nonlinear plant.",
+    "Same sign convention as cartpole_observer: positive theta leans toward +x.",
+    "discrete process_std from config",
+    "K and L redesigned for this configuration",
+    "Accumulated cost is sum_t (S_t' Qc S_t + U_t' Rc U_t) with no factor of dt."
+  ],
+  "disclaimer": "Spectral radii and Riccati residuals are for the continuous-state linear Gaussian model with the fixed steady-state gains. They do not apply to nonlinear plants or quantized controllers."
+}

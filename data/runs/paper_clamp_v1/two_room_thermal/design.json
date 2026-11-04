@@ -1,0 +1,42 @@
+{
+  "name": "two_room_thermal",
+  "n": 2,
+  "m": 2,
+  "dt": 30.0,
+  "spectral_radius_A": 0.9970044955033729,
+  "spectral_radius_A_minus_BK": 0.9927394945444755,
+  "spectral_radius_A(I-LH)": 0.6715700202421053,
+  "spectral_radius_joint": 0.9927394945444757,
+  "lqr_riccati_residual": 1.1368683772161603e-13,
+  "kalman_gain_residual": 0.0,
+  "kalman_pred_residual": 1.951563910473908e-18,
+  "K": [
+    [
+      43.222228535743646,
+      18.50283829521946
+    ],
+    [
+      23.14524839689782,
+      44.15392240900668
+    ]
+  ],
+  "L": [
+    [
+      0.32376057191350843,
+      0.0028598258994202127
+    ],
+    [
+      0.002859825899420212,
+      0.32313421455618374
+    ]
+  ],
+  "notes": [
+    "Two-room thermal deviations from a desired equilibrium.",
+    "Ci in J/K, conductances ai in W/K, inputs in W (positive heats, negative cools).",
+    "The inputs are unconstrained power deviations, not heating-only actuators.",
+    "discrete process_std from config",
+    "K and L redesigned for this configuration",
+    "Accumulated cost is sum_t (S_t' Qc S_t + U_t' Rc U_t) with no factor of dt."
+  ],
+  "disclaimer": "Spectral radii and Riccati residuals are for the continuous-state linear Gaussian model with the fixed steady-state gains. They do not apply to nonlinear plants or quantized controllers."
+}

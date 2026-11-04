@@ -1,0 +1,55 @@
+{
+  "name": "coupled_masses",
+  "n": 4,
+  "m": 1,
+  "dt": 0.05,
+  "spectral_radius_A": 0.9939476752007166,
+  "spectral_radius_A_minus_BK": 0.9792499443821113,
+  "spectral_radius_A(I-LH)": 0.7191241815183507,
+  "spectral_radius_joint": 0.9792499443821112,
+  "lqr_riccati_residual": 1.8474111129762605e-13,
+  "kalman_gain_residual": 2.168404344971009e-19,
+  "kalman_pred_residual": 6.071532165918825e-18,
+  "K": [
+    [
+      2.5405514593315894,
+      2.4373410129776136,
+      -0.6741943002915458,
+      1.4410275648323199
+    ]
+  ],
+  "L": [
+    [
+      0.24136732121205667,
+      0.013003321014022306,
+      0.002633330926642462,
+      0.0008820117944635401
+    ],
+    [
+      0.3250830253505578,
+      0.2987296018901579,
+      0.026252086749940347,
+      0.003756158545505375
+    ],
+    [
+      0.002633330926642463,
+      0.0010500834699976136,
+      0.2435550092089239,
+      0.01381855323478104
+    ],
+    [
+      0.022050294861588514,
+      0.003756158545505375,
+      0.3454638308695259,
+      0.3018614943648699
+    ]
+  ],
+  "notes": [
+    "Coupled masses with grounded and coupling spring/damper. Control force on mass 1.",
+    "Coupling: m1 sees -kc(x1-x2)-bc(x1d-x2d); m2 sees -kc(x2-x1)-bc(x2d-x1d).",
+    "discrete process_std from config",
+    "K and L redesigned for this configuration",
+    "Accumulated cost is sum_t (S_t' Qc S_t + U_t' Rc U_t) with no factor of dt."
+  ],
+  "disclaimer": "Spectral radii and Riccati residuals are for the continuous-state linear Gaussian model with the fixed steady-state gains. They do not apply to nonlinear plants or quantized controllers."
+}

@@ -1,0 +1,91 @@
+{
+  "name": "drone_hover",
+  "n": 6,
+  "m": 2,
+  "dt": 0.02,
+  "spectral_radius_A": 1.0,
+  "spectral_radius_A_minus_BK": 0.9588630567039939,
+  "spectral_radius_A(I-LH)": 0.7910760292231245,
+  "spectral_radius_joint": 0.9588630567039934,
+  "lqr_riccati_residual": 5.684341886080801e-13,
+  "kalman_gain_residual": 8.673617379884035e-19,
+  "kalman_pred_residual": 8.673617379884035e-18,
+  "K": [
+    [
+      -4.979736777553563e-15,
+      6.064382446751704,
+      -1.953984441333076e-15,
+      4.08972574888121,
+      -9.675407949925233e-15,
+      -9.383687009438479e-17
+    ],
+    [
+      3.309835558925996,
+      -5.788641600065582e-15,
+      2.7906788134200653,
+      1.6285855993245241e-16,
+      9.511892622407338,
+      1.3878981811836701
+    ]
+  ],
+  "L": [
+    [
+      0.1955823389081612,
+      0.0,
+      0.007694372364446403,
+      0.0,
+      0.0005602358271936395,
+      -5.319657675570942e-06
+    ],
+    [
+      0.0,
+      0.19556340959548735,
+      0.0,
+      0.007677838859211722,
+      0.0,
+      0.0
+    ],
+    [
+      0.19235930911116014,
+      0.0,
+      0.32541441218950345,
+      0.0,
+      0.05359067738816042,
+      0.00022911914599869345
+    ],
+    [
+      0.0,
+      0.19194597148029313,
+      0.0,
+      0.32457416587022925,
+      0.0,
+      0.0
+    ],
+    [
+      0.0005602358271936394,
+      0.0,
+      0.002143627095526416,
+      0.0,
+      0.3944576716124814,
+      0.003714128730829907
+    ],
+    [
+      -0.00013299144188927357,
+      0.0,
+      0.0002291191459986933,
+      0.0,
+      0.09285321827074763,
+      0.6173666124506867
+    ]
+  ],
+  "notes": [
+    "Planar linearized hover: positive pitch toward +x gives xdd = g phi.",
+    "Vertical acceleration from thrust deviation above hover thrust mg.",
+    "Cost penalizes input deviations from hover, not total thrust energy.",
+    "Guarantees apply to this linearization, not the nonlinear rigid-body drone.",
+    "discrete process_std from config",
+    "K and L redesigned for this configuration",
+    "Accumulated cost is sum_t (S_t' Qc S_t + U_t' Rc U_t) with no factor of dt."
+  ],
+  "disclaimer": "Spectral radii and Riccati residuals are for the continuous-state linear Gaussian model with the fixed steady-state gains. They do not apply to nonlinear plants or quantized controllers."
+}

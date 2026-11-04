@@ -1,0 +1,115 @@
+{
+  "name": "coupled_masses",
+  "system": "coupled_masses",
+  "description": "Illustrative two-mass chain with grounded and coupling spring/damper. Control force on mass 1.",
+  "physics": {
+    "m1": 1.0,
+    "m2": 1.2,
+    "k1": 3.0,
+    "k2": 2.5,
+    "kc": 1.5,
+    "b1": 0.3,
+    "b2": 0.25,
+    "bc": 0.15,
+    "dt": 0.05
+  },
+  "lqr": {
+    "Q": [
+      5.0,
+      0.5,
+      5.0,
+      0.5
+    ],
+    "R": 0.2
+  },
+  "cost": {
+    "Q": [
+      5.0,
+      0.5,
+      5.0,
+      0.5
+    ],
+    "R": 0.2
+  },
+  "noise": {
+    "process_std": [
+      0.002,
+      0.02,
+      0.002,
+      0.02
+    ],
+    "measurement_std": [
+      0.01,
+      0.05,
+      0.01,
+      0.05
+    ],
+    "rule": "gh3"
+  },
+  "init": {
+    "s": [
+      0.15,
+      0.0,
+      -0.1,
+      0.0
+    ],
+    "z": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "horizons": [
+    25,
+    50,
+    100
+  ],
+  "simulation": {
+    "n_traj": 20000,
+    "seed": 20261026,
+    "n_draw": 800
+  },
+  "delta": 0.025,
+  "measurement_noise_multipliers": [
+    0.25,
+    1.0,
+    4.0
+  ],
+  "grid": {
+    "state_points": [
+      21,
+      15,
+      21,
+      15
+    ],
+    "state_range": [
+      0.4,
+      0.9,
+      0.4,
+      0.9
+    ],
+    "memory_points": [
+      21,
+      15,
+      21,
+      15
+    ],
+    "memory_range": [
+      0.4,
+      0.9,
+      0.4,
+      0.9
+    ],
+    "action_points": 21,
+    "action_limit": 5.0
+  },
+  "lambda_grid": {
+    "min": 0.01,
+    "max": 100.0,
+    "points_per_decade": 8,
+    "max_expansions": 2
+  },
+  "poly_degree": 16,
+  "max_states": 120000
+}

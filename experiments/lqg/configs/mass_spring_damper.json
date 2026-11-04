@@ -1,0 +1,94 @@
+{
+  "name": "mass_spring_damper",
+  "system": "mass_spring_damper",
+  "description": "Illustrative single mass-spring-damper with force input. Parameters are not a cited public benchmark.",
+  "physics": {
+    "m": 1.0,
+    "b": 0.4,
+    "k": 4.0,
+    "dt": 0.05
+  },
+  "lqr": {
+    "Q": [
+      10.0,
+      1.0
+    ],
+    "R": 0.1
+  },
+  "cost": {
+    "Q": [
+      10.0,
+      1.0
+    ],
+    "R": 0.1
+  },
+  "noise": {
+    "process_std": [
+      0.002,
+      0.02
+    ],
+    "measurement_std": [
+      0.01,
+      0.05
+    ],
+    "comment": "Discrete per-step standard deviations for position [m] and velocity [m/s].",
+    "rule": "gh3"
+  },
+  "observation": {
+    "H": "I"
+  },
+  "init": {
+    "s": [
+      0.2,
+      0.0
+    ],
+    "z": [
+      0.0,
+      0.0
+    ]
+  },
+  "horizons": [
+    25,
+    50,
+    100
+  ],
+  "simulation": {
+    "n_traj": 20000,
+    "seed": 20261026,
+    "n_draw": 800
+  },
+  "delta": 0.025,
+  "measurement_noise_multipliers": [
+    0.25,
+    1.0,
+    4.0
+  ],
+  "grid": {
+    "state_points": [
+      41,
+      31
+    ],
+    "state_range": [
+      0.4,
+      0.8
+    ],
+    "memory_points": [
+      41,
+      31
+    ],
+    "memory_range": [
+      0.4,
+      0.8
+    ],
+    "action_points": 21,
+    "action_limit": 5.0
+  },
+  "lambda_grid": {
+    "min": 0.01,
+    "max": 100.0,
+    "points_per_decade": 8,
+    "max_expansions": 2
+  },
+  "poly_degree": 16,
+  "max_states": 80000
+}

@@ -1,0 +1,56 @@
+{
+  "name": "quarter_car",
+  "n": 4,
+  "m": 1,
+  "dt": 0.01,
+  "spectral_radius_A": 0.9861479228021088,
+  "spectral_radius_A_minus_BK": 0.9752643567217852,
+  "spectral_radius_A(I-LH)": 0.9532735579330481,
+  "spectral_radius_joint": 0.9752643567217857,
+  "lqr_riccati_residual": 5.4569682106375694e-12,
+  "kalman_gain_residual": 5.551115123125783e-17,
+  "kalman_pred_residual": 1.0658141036401503e-14,
+  "K": [
+    [
+      670.7244294968286,
+      690.9361952300837,
+      1054.774058565433,
+      -169.56435275670054
+    ]
+  ],
+  "L": [
+    [
+      0.03923956082011113,
+      0.000801300878108305,
+      0.016059628020382702,
+      -4.146893399204399e-05
+    ],
+    [
+      0.08013008781083053,
+      0.10674361560909851,
+      2.7152433008633157,
+      0.0017834918988444207
+    ],
+    [
+      0.016059628020382702,
+      0.027152433008633195,
+      0.7687451019670901,
+      0.0006652234911503595
+    ],
+    [
+      -0.004146893399202156,
+      0.0017834918988421933,
+      0.06652234911507549,
+      0.9993933321725184
+    ]
+  ],
+  "notes": [
+    "Active quarter-car: body and wheel masses, suspension spring/damper, tire stiffness.",
+    "Active force +u on the body and -u on the wheel.",
+    "Road enters as a formal white disturbance through the tire spring channel; it is not a differentiable road-displacement trajectory.",
+    "discrete SW from continuous intensity via Van Loan",
+    "K and L redesigned for this configuration",
+    "Accumulated cost is sum_t (S_t' Qc S_t + U_t' Rc U_t) with no factor of dt."
+  ],
+  "disclaimer": "Spectral radii and Riccati residuals are for the continuous-state linear Gaussian model with the fixed steady-state gains. They do not apply to nonlinear plants or quantized controllers."
+}

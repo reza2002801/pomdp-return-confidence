@@ -1,0 +1,108 @@
+{
+  "name": "quarter_car",
+  "system": "quarter_car",
+  "description": "Illustrative active quarter-car. Road disturbance is continuous white noise through the tire spring channel, discretized by Van Loan. Not a cited ISO road profile.",
+  "physics": {
+    "ms": 300.0,
+    "mu": 40.0,
+    "ks": 15000.0,
+    "bs": 1000.0,
+    "kt": 150000.0,
+    "dt": 0.01
+  },
+  "lqr": {
+    "Q": [
+      40.0,
+      1.0,
+      10.0,
+      0.5
+    ],
+    "R": 1e-06
+  },
+  "cost": {
+    "Q": [
+      40.0,
+      1.0,
+      10.0,
+      0.5
+    ],
+    "R": 1e-06
+  },
+  "noise": {
+    "process_intensity": 0.0001,
+    "comment": "Scalar continuous road intensity; channel G injects (kt/mu) into wheel acceleration. Measurement stds are discrete.",
+    "measurement_std": [
+      0.005,
+      0.05,
+      0.005,
+      0.05
+    ],
+    "rule": "gh3"
+  },
+  "init": {
+    "s": [
+      0.05,
+      0.0,
+      0.02,
+      0.0
+    ],
+    "z": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "horizons": [
+    25,
+    50,
+    100
+  ],
+  "simulation": {
+    "n_traj": 20000,
+    "seed": 20261026,
+    "n_draw": 800
+  },
+  "delta": 0.025,
+  "measurement_noise_multipliers": [
+    0.25,
+    1.0,
+    4.0
+  ],
+  "grid": {
+    "state_points": [
+      9,
+      7,
+      9,
+      7
+    ],
+    "state_range": [
+      0.1,
+      0.5,
+      0.06,
+      0.8
+    ],
+    "memory_points": [
+      9,
+      7,
+      9,
+      7
+    ],
+    "memory_range": [
+      0.1,
+      0.5,
+      0.06,
+      0.8
+    ],
+    "action_points": 11,
+    "action_limit": 3000.0
+  },
+  "lambda_grid": {
+    "min": 0.01,
+    "max": 100.0,
+    "points_per_decade": 8,
+    "max_expansions": 2
+  },
+  "poly_degree": 16,
+  "max_states": 80000
+}
